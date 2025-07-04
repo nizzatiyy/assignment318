@@ -1,0 +1,249 @@
+<!-- HTML FILE: reviews.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charmora | Accessories Jewelry</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://www.svgrepo.com/show/414284/charm.svg" type="image/png" />
+
+</head>
+<body>
+  <header class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="logo1.png" alt="Logo Charmora" />
+          </a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <div class="dropdown">
+            <a href="product.html" class="dropbtn">Products ⌄</a>
+             <div class="dropdown-content">
+             <a href="bracelets.html">Bracelets</a>
+             <a href="charms.html">Charms</a>
+          </div>
+          </div>
+          <a href="news.html">News</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact us</a>
+          <a href="marketing.html">Marketing</a>
+          <a href="reviews.html">Rating</a>
+          <a href="logout.html" class="logout-icon" title="Log Out">
+            <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/c4/logout-31dva2zl3l9ao92pwnmgnt.png/logout-6bjs3s3fnciv7c0ye52y3l.png?_a=DATAdtAAZAA0" alt="Logout Icon" />
+          </a>
+        </nav>
+        <a href="cart.html" class="cart-icon" style="cursor: pointer; display: flex; align-items: center; text-decoration: none;">
+  <img src="https://static.vecteezy.com/system/resources/previews/004/705/202/original/shopping-cart-icon-design-symbol-trolley-cart-basket-commerce-for-ecommerce-free-vector.jpg" alt="Cart Icon" style="width: 30px; height: 30px; object-fit: contain; margin-right: 5px;">
+  <span id="cart-count">0</span>
+</a>
+        </div>
+      </div>
+    </div>
+    <img src="https://i.pinimg.com/736x/27/5c/75/275c759ac37d2cfa3fcc41a285f1dc2b.jpg" alt="Hero" class="hero-img" />
+    <div class="hero-text">
+      <div class="hero-title">
+        <span class="hero-big-t">T</span>
+        <div class="hero-words">
+          <div class="top-word">iny Charms,</div>
+          <div class="bottom-word">imeless Moments</div>
+        </div>
+      </div>
+      <p>Amazing Deals, Over $1000+ Brands. Real Quality.</p>
+      <a href="product.html" class="btn">Shop Now</a>
+    </div>
+  </header>
+
+  <header>
+    <h1>Ratings & Reviews</h1>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title">See What Our Customers Are Saying</h2>
+    <div class="filter-buttons">
+      <button onclick="showReviews(5)" class="active">★★★★★</button>
+      <button onclick="showReviews(4)">★★★★☆</button>
+      <button onclick="showReviews(3)">★★★☆☆</button>
+      <button onclick="showReviews(2)">★★☆☆☆</button>
+      <button onclick="showReviews(1)">★☆☆☆☆</button>
+    </div>
+    <div class="review-list" id="reviewContainer"></div>
+    <div class="cta">
+      <a href="review-form.html">✨ Leave Your Review</a>
+    </div>
+  </section>
+
+   <script>
+    const reviews = {
+      5: [
+        { name: "🌸 Aisyah N.", item: "Rose Gold Grace", text: "It’s more than jewelry. It’s a story I wear every day." },
+        { name: "💫 Emma T.", item: "Custom Moonstone Set", text: "Packaging and charm were perfect. Love it!" },
+        { name: "✨ Sara L.", item: "Golden Heirloom", text: "Elegant, timeless and very well made." },
+        { name: "🎁 Chloe R.", item: "Chamora Luxe Box", text: "Perfect gift. My bestie cried when she opened it!" },
+        { name: "💖 Lily W.", item: "Silver Sparkling Chain", text: "It sparkles beautifully in sunlight. Highly recommend!" },
+        { name: "🌟 Kayla H.", item: "Twilight Rose Charm", text: "Subtle yet stunning. Love wearing it daily." },
+        { name: "🌼 Imani F.", item: "Sunbeam Bracelet", text: "So bright and elegant. My favorite accessory now!" },
+        { name: "🕊️ Layla B.", item: "Feather Touch Pendant", text: "Looks premium and delicate. Excellent quality." }
+      ],
+      4: [
+        { name: "🌷 Farah M.", item: "Ocean Pearl Dream", text: "This bracelet reminds me of peaceful holidays. So calming." },
+        { name: "🌼 Huda K.", item: "Lavender Opal", text: "Beautiful but shipping took a while." },
+        { name: "🪞 Misha A.", item: "Vintage Lock Charm", text: "Love the design, but box came a bit dented." },
+        { name: "🌈 Mira S.", item: "Aurora Chain", text: "Colors are beautiful. Slightly loose on my wrist though." },
+        { name: "🌙 Alina D.", item: "Moonbeam Glow", text: "Very pretty under soft light. Wish it came with a pouch." }
+      ],
+      3: [
+        { name: "📦 Maya Z.", item: "Mini Star Charm", text: "The charm was cute but smaller than expected." },
+        { name: "🎨 Eira D.", item: "Color Pop Bead", text: "Colors nice, but packaging felt basic." },
+        { name: "🪡 Hanna G.", item: "Threaded Blossom", text: "It’s nice but I expected more detail in the engraving." }
+      ],
+      2: [
+        { name: "🛠️ Nina P.", item: "Butterfly Clasp", text: "The charm fell off after a week. Disappointed." },
+        { name: "🤨 Hani L.", item: "Charm Organizer", text: "Looks good online, but felt flimsy in hand." },
+        { name: "💔 Zara M.", item: "Floral Locket", text: "One side doesn’t close properly. Sad about the quality." }
+      ],
+      1: [
+        { name: "😢 Adira W.", item: "Pearl Rose Chain", text: "Arrived broken. Still waiting for a replacement." },
+        { name: "☹️ Nabila J.", item: "Mini Heart Lock", text: "Not what I expected. Looks cheaper than the photos." },
+        { name: "🙁 Dina K.", item: "Charm Clasp Set", text: "Poor build quality. Wouldn’t recommend." }
+      ]
+    };
+
+    function showReviews(star) {
+      const container = document.getElementById("reviewContainer");
+      container.innerHTML = "";
+      document.querySelectorAll(".filter-buttons button").forEach(btn => btn.classList.remove("active"));
+      document.querySelector(`.filter-buttons button:nth-child(${6 - star})`).classList.add("active");
+
+      reviews[star].forEach(review => {
+        const card = document.createElement("div");
+        card.className = "review-card";
+        card.innerHTML = `
+          <h3>${review.name} – ${review.item}</h3>
+          <p>"${review.text}"</p>
+          <div class="stars">${'★'.repeat(star)}${'☆'.repeat(5 - star)}</div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    showReviews(5);
+  </script>
+
+<script>
+  // Quantity buttons for all cards
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+
+    cards.forEach(function (card) {
+      const minusBtn = card.querySelectorAll('.qty-btn')[0];
+      const plusBtn = card.querySelectorAll('.qty-btn')[1];
+      const qtyDisplay = card.querySelector('.qty-number');
+
+      minusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        if (currentQty > 1) {
+          qtyDisplay.textContent = currentQty - 1;
+        }
+      });
+
+      plusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        qtyDisplay.textContent = currentQty + 1;
+      });
+    });
+  });
+
+  // Add to Cart with Quantity
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+    cards.forEach(card => {
+      if (card.innerText.includes(name)) {
+        const qty = parseInt(card.querySelector('.qty-number').textContent);
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity += qty;
+        } else {
+          cart.push({ name, price, quantity: qty });
+        }
+      }
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+  }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+
+
+  <div class="floating-clock" onclick="showClockAlert()">
+    ⏰ <span id="live-clock">--:--:--</span>
+  </div>
+  <a href="index.html" class="floating-home-button">Back to Home</a>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">CHARMORA</div>
+      <div class="footer-menus">
+        <ul>
+          <li>Legal Notice</li>
+          <li>Terms of Service</li>
+          <li>Privacy Policy</li>
+          <li>Shipping Policy</li>
+          <li>Return policy</li>
+          <li>Refund Policy</li>
+          <li>Do not sell or share my personal information</li>
+        </ul>
+        <ul>
+          <li>Home</li>
+          <li>Original Bracelet</li>
+          <li>All Charms</li>
+          <li>Become An Affiliate</li>
+          <li>Our Story</li>
+          <li>Tracking</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+      <div class="footer-follow">
+        <a href="https://www.instagram.com/charmsoff_/" target="_blank" class="follow-button">💜 Follow on shop</a>
+      </div>
+      <div class="footer-bottom">
+        <div class="selects">
+          <select><option>Malaysia (MYR RM)</option></select>
+          <select><option>English</option></select>
+        </div>
+        <div class="payments">
+          <a href="https://www.apple.com/my/payment-methods/" target="_blank">
+    <img src="https://i.pcmag.com/imagery/reviews/02RJy7OTtPnQQjh37yQDNqx-15..v1598973550.png" alt="Apple Pay" />
+  </a>
+  <a href="https://www.visa.com.my/pay-with-visa/click-to-pay-with-visa.html" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/100px-Visa.svg.png" alt="Visa" />
+  </a>
+  <a href="https://src.mastercard.com/profile/enroll?cmp=my.en-my.ap.mccom.getStarted&locale=en_MY" target="_blank">
+    <img src="https://logoeps.com/wp-content/uploads/2011/08/mastercard-logo.png" alt="MasterCard" />
+          </a>
+        </div>
+        <p class="copyright">© 2025, IMD318 GROUP ASSIGNMENT</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="reviews.js"></script>
+</body>
+</html>

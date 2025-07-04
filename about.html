@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charmora | Accessories Jewelry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://www.svgrepo.com/show/414284/charm.svg" type="image/png">
+
+</head>
+<body>
+ 
+  <header class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img src="logo1.png" alt="Logo Charmora" />
+        </div>
+        <nav>
+         <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <div class="dropdown">
+            <a href="product.html" class="dropbtn">Products ⌄</a>
+             <div class="dropdown-content">
+             <a href="bracelets.html">Bracelets</a>
+             <a href="charms.html">Charms</a>
+          </div>
+          </div>
+          <a href="news.html">News</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact us</a>
+          <a href="marketing.html">Marketing</a>
+          <a href="reviews.html">Rating</a>
+         <a href="logout.html" class="logout-icon" title="Log Out">
+            <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/c4/logout-31dva2zl3l9ao92pwnmgnt.png/logout-6bjs3s3fnciv7c0ye52y3l.png?_a=DATAdtAAZAA0" alt="Logout Icon" />
+          </a>
+        </nav>
+        <a href="cart.html" class="cart-icon" style="cursor: pointer; display: flex; align-items: center; text-decoration: none;">
+  <img src="https://static.vecteezy.com/system/resources/previews/004/705/202/original/shopping-cart-icon-design-symbol-trolley-cart-basket-commerce-for-ecommerce-free-vector.jpg" alt="Cart Icon" style="width: 30px; height: 30px; object-fit: contain; margin-right: 5px;">
+  <span id="cart-count">0</span>
+</a>
+</div>
+  </div>
+</div>
+
+<!-- Cart Sidebar -->
+<div id="cart-sidebar" class="cart-sidebar">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <button class="checkout-btn" onclick="window.location.href='checkout.html'">Checkout</button>
+  <button class="close-cart-btn" onclick="closeCart()">Close</button>
+</div>
+    
+  <div class="hero-carousel">
+  <a href="https://www.pinterest.com/pin/805722808363039740/" target="_blank">
+    <img src="https://i.pinimg.com/736x/fa/c5/ad/fac5ad78faa0117265a465f9438ea4d0.jpg" alt="Slide 1" />
+  </a>
+  <a href="https://www.pinterest.com/pin/805722808363040625/" target="_blank">
+    <img src="https://i.pinimg.com/736x/34/06/a1/3406a18c5ad8060043c2f5cc9d0124d7.jpg" alt="Slide 2" />
+  </a>
+  <a href="https://www.pinterest.com/pin/805722808363040573/" target="_blank">
+    <img src="https://i.pinimg.com/736x/16/83/93/168393aa2e8eab7e3faefd19d6eb470d.jpg" alt="Slide 3" />
+  </a>
+  <a href="https://www.pinterest.com/pin/805722808363040505/" target="_blank">
+    <img src="https://i.pinimg.com/736x/8d/ac/ab/8dacab1b62199633e9d39221ddc9934d.jpg" alt="Slide 4" />
+  </a>
+  <a href="https://www.pinterest.com/pin/805722808363040476/" target="_blank">
+    <img src="https://i.pinimg.com/736x/83/0f/81/830f816814810ca892e72d8caeb511c8.jpg" alt="Slide 5" />
+  </a>
+</div>
+
+ <section class="about-history-wrapper">
+    <!-- About Us Section -->
+    <div class="about-content" id="about">
+      <h2 class="fancy-heading"> About Us </h2>
+      <p class="intro-text">Charmora isn't just a jewelry brand — it's a celebration of life’s finest moments. Each charm is infused with meaning, beauty, and soul, transforming the ordinary into something extraordinary. Since our founding in 1999, we've embraced a simple vision: to craft jewelry that’s more than adornment — it's a story you wear.</p>
+      <ul class="custom-bullet-list">
+        <li>💖 Passionately handcrafted to express unique personalities</li>
+        <li>🌟 Designed to commemorate milestones, memories, and magic</li>
+        <li>🕊️ Made with sustainable materials and conscious care</li>
+      </ul>
+      <ol class="custom-number-list">
+        <li>Every piece is a blend of timeless artistry and modern trends</li>
+        <li>Inspiration drawn from nature, culture, and heartfelt emotions</li>
+        <li>Personalized touches that make your story unforgettable</li>
+      </ol>
+      <p class="highlight-quote">"Every charm whispers a memory, every sparkle celebrates you."</p>
+      <div class="about-buttons">
+        <a href="#about">View Our Story</a>
+        <a href="#founders">Meet the Founders</a>
+      </div>
+    </div>
+
+    <!-- Image Slider Section -->
+<div class="image-slider" id="founders">
+
+  <div class="slider-container" id="slider" onmousedown="startDrag(event)" ontouchstart="startTouch(event)">
+    <div class="slide-item">
+      <img src="adani.jpg" alt="Adani" />
+      <p>Adani Sofia</p>
+      <p>Founder</p>
+    </div>
+    <div class="slide-item">
+      <img src="ainin.jpg" alt="Ainin" />
+      <p>Ainin Sofiya</p>
+      <p>Creative Lead</p>
+    </div>
+    <div class="slide-item">
+      <img src="ziqah.jpg" alt="Ziqah" />
+      <p>Nurhaziqah</p>
+      <p>Designer</p>
+    </div>
+    <div class="slide-item">
+      <img src="safirah.jpg" alt="Safirah" />
+      <p>Nur Safirah</p>
+      <p>Marketing</p>
+    </div>
+    <div class="slide-item">
+      <img src="zati.jpg" alt="Zaty" />
+      <p>Nurain Izzati</p>
+      <p>Stylist</p>
+    </div>
+  </div>
+</div>
+
+<section class="vision-mission-section">
+  <h2 class="vm-heading">Our Vision & Mission</h2>
+  <div class="vm-container">
+    <div class="vm-box vision">
+      <h3>Our Vision</h3>
+      <p>
+        To be the leading name in luxurious, modern jewelry — redefining elegance with ethical craftsmanship and timeless charm.
+      </p>
+    </div>
+    <div class="vm-box mission">
+      <h3>Our Mission</h3>
+      <ul>
+        <li>• Design refined, elegant jewelry with sustainable practices.</li>
+        <li>• Deliver exceptional customer experiences across every touchpoint.</li>
+        <li>• Inspire confidence through creativity, heritage, and passion.</li>
+        <li>• Empower individuals with pieces that tell their unique story.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 🌟 Floating Clock and Back to Home -->
+<div class="floating-clock" onclick="showClockAlert()">
+  ⏰ <span id="live-clock">--:--:--</span>
+</div>
+
+<a href="index.html" class="floating-home-button">Back to Home</a>
+
+    <!-- History Section -->
+    <div class="history-content" id="history">
+      <h2 class="fancy-heading"> Our History </h2>
+      <p class="intro-text">From a humble dream to a nationwide symbol of sophistication, Charmora's journey has been defined by purpose and passion. What began as a small design studio in Kuala Lumpur has blossomed into a renowned name synonymous with elegance and meaning. Our pieces don’t just shine — they speak.</p>
+      <ul class="styled-checklist">
+        <li>🎯 Launched with just a dozen designs — now home to hundreds</li>
+        <li>🌏 Expanded to international markets and online platforms</li>
+        <li>🏆 Honored by fashion houses and media for creativity and impact</li>
+      </ul>
+     <section class="timeline-chart-section" id="timeline">
+  <h2 class="fancy-heading">✨ Charmora Growth Chart</h2>
+  <div class="timeline-chart">
+
+   <!-- 🌟 Timeline Events (Enhanced) -->
+  <div class="timeline-chart">
+    <!-- 2010 -->
+    <div class="chart-node">
+      <span class="year-label">2010</span>
+      <div class="chart-event">
+        <strong>Founded in Kuala Lumpur</strong>
+        <p>
+          On a bright morning in <strong>16 March 2010</strong>, Charmora was born from a dream to craft jewelry that tells a story.
+          Our founders envisioned a boutique brand that blends timeless tradition with contemporary artistry.
+        </p>
+        <a href="https://calendar.google.com" class="calendar-link" target="_blank">📅 Add 2010 Launch to Calendar</a>
+      </div>
+    </div>
+
+    <!-- 2013 -->
+    <div class="chart-node">
+      <span class="year-label">2013</span>
+      <div class="chart-event">
+        <strong>First Boutique Opens</strong>
+        <p>
+          In evening 4:25 P.M.<strong>20 August 2013</strong>, Charmora opened its first boutique at Pavilion KL — a luxurious space adorned with crystal
+          chandeliers and velvet displays, becoming a destination for elegance seekers.
+        </p>
+        <a href="https://calendar.google.com" class="calendar-link" target="_blank">📅 Add 2013 Opening to Calendar</a>
+      </div>
+    </div>
+
+    <!-- 2016 -->
+    <div class="chart-node">
+      <span class="year-label">2016</span>
+      <div class="chart-event">
+        <strong>Featured in Vogue Asia</strong>
+        <p>
+          By afternoon 12:40 P.M.<strong>10 November 2016</strong>, Charmora’s exquisite craftsmanship made headlines as we were spotlighted in Vogue Asia,
+          earning praise for redefining elegance in the modern fashion scene.
+        </p>
+        <a href="https://calendar.google.com" class="calendar-link" target="_blank">📅 Mark Vogue Asia Feature</a>
+      </div>
+    </div>
+
+    <!-- 2020 -->
+    <div class="chart-node">
+      <span class="year-label">2020</span>
+      <div class="chart-event">
+        <strong>Global E-Commerce Launch</strong>
+        <p>
+          Amidst a digital revolution in <strong> 09 April 2020</strong>, Charmora launched its global e-commerce platform,
+          reaching hearts and homes across the world with curated elegance and personalized online consultations.
+        </p>
+        <a href="https://calendar.google.com" class="calendar-link" target="_blank">📅 Save E-Commerce Milestone</a>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="chart-node">
+      <span class="year-label">2024</span>
+      <div class="chart-event">
+        <strong>Bridal Collection Launched</strong>
+        <p>
+          Just in time for wedding season, <strong>19 March 2024</strong> saw the debut of our signature Bridal Collection — where each
+          design whispers romance, grace, and heirloom beauty for generations to come.
+        </p>
+        <a href="https://calendar.google.com" class="calendar-link" target="_blank">📅 Add Bridal Launch to Calendar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ✨ Highlighted Quote -->
+  <p class="highlight-quote">"From a sparkle in a dream to a jewel in every heart."</p>
+
+  <!-- 🔗 Buttons -->
+  <div class="history-buttons">
+    <a href="#history">⏳ Timeline Journey</a>
+    <a href="#press">📰 Press & Features</a>
+  </div>
+</section>
+
+    <section id="press" class="press-section">
+    <h2 class="fancy-heading">✨ Press & Features ✨</h2>
+    <p class="press-intro">
+      Charmora has been proudly featured in top fashion publications and global events.
+    </p>
+
+    <!-- Press Magazine Slider -->
+<div class="press-slider-wrapper">
+    <div class="press-slider">
+      <div class="press-slide-track">
+        <!-- Vogue -->
+        <a href="https://www.vogue.com" target="_blank" class="press-slide">
+          <img src="https://static01.nyt.com/images/2022/08/25/fashion/22LINDA-UNBUTTONED-1/merlin_211794783_4cd91f20-deaa-41d8-a037-fa513d822b1f-articleLarge.jpg?quality=75&auto=webp&disable=upscale" alt="Vogue Magazine" />
+        </a>
+        <!-- Harper's Bazaar -->
+        <a href="https://www.harpersbazaar.com" target="_blank" class="press-slide">
+          <img src="https://www.hearstmagazines.co.uk/media/catalog/product/cache/51953653fdef8ef18ec1474aa5cd7e22/b/a/baz-dec22-cover-rgb_400x530_2_26.jpg" alt="Harper Bazaar's Magazine" />
+        </a>
+        <!-- Elle -->
+        <a href="https://www.elle.com" target="_blank" class="press-slide">
+          <img src="https://i.pinimg.com/736x/20/08/cd/2008cd7a339f830f3f0c15c0efb7460d.jpg" alt="Elle Magazine" />
+        </a>
+        <!-- Numéro -->
+        <a href="https://www.numero.com/en/fashion" target="_blank" class="press-slide">
+          <img src="https://shop.numero.com/4116-category_default/numero-233.jpg" alt="Numéro (Styled from NST image)" />
+        </a>
+        <!-- L'Officiel -->
+        <a href="https://www.lofficielusa.com/fashion" target="_blank" class="press-slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEi8vTWFHlKpjJxUBfgKniNMNW65bds_x4iw&s" alt="L'Officiel (Styled from The Star image)" />
+        </a>
+        <!-- W Magazine -->
+        <a href="https://www.wmagazine.com/" target="_blank" class="press-slide">
+          <img src="https://imgix.bustle.com/uploads/image/2024/8/22/d24497ab/wmagvol42024sabrinacarpentercoverhrrgb.jpg?w=374&h=486&fit=crop&crop=focalpoint&dpr=2&fp-x=0.5038&fp-y=0.3137" alt="W Magazine (Styled from Tatler image)" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const scrollContainer = document.getElementById("slider");
+  function slideRight() {
+    scrollContainer.scrollBy({ left: 250, behavior: 'smooth' });
+  }
+  function slideLeft() {
+    scrollContainer.scrollBy({ left: -250, behavior: 'smooth' });
+  }
+</script>
+
+<section class="location-fullwidth" id="location">
+  <h2 class="location-title">📍 Our Location</h2>
+
+  <div class="location-content">
+    <div class="location-text">
+      <h3>Visit Our Heart in Kuala Lumpur</h3>
+      <p>
+        Nestled in the vibrant heart of <strong>Kuala Lumpur</strong>, Charmora’s flagship studio is a hidden gem surrounded by culture, creativity, and modern charm. Just steps away from luxury boutiques, artisanal cafés, and fashion galleries, our location is not just a store — it's an experience.
+      </p>
+      <ul>
+        <li>🛍️ Boutique Studio with Exclusive Collections</li>
+        <li>☕ Personalized Styling Lounge with Refreshments</li>
+        <li>🎨 Live Artisan Demos & Custom Design Stations</li>
+        <li>🚇 Easy Access via Bukit Bintang MRT Station</li>
+        <li>📸 Insta-worthy Interiors and Displays</li>
+      </ul>
+      <a class="map-button" href="https://www.google.com/maps/place/Kuala+Lumpur/" target="_blank">📌 View on Google Maps</a>
+    </div>
+
+    <div class="location-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127235.23642776306!2d101.59464475!3d3.13900385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc37f3c163aa9d%3A0x16b4b450d6c4cd66!2sKuala%20Lumpur!5e0!3m2!1sen!2smy!4v1657485292791!5m2!1sen!2smy"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollContainer = document.getElementById("slider");
+
+    function slideRight() {
+      scrollContainer.scrollBy({ left: 250, behavior: 'smooth' });
+    }
+
+    function slideLeft() {
+      scrollContainer.scrollBy({ left: -250, behavior: 'smooth' });
+    }
+
+    // Auto scroll every 4 seconds
+    setInterval(() => {
+      if (
+        scrollContainer.scrollLeft + scrollContainer.clientWidth >=
+        scrollContainer.scrollWidth
+      ) {
+        scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        slideRight();
+      }
+    }, 4000);
+
+    // Make functions available to HTML onclick
+    window.slideLeft = slideLeft;
+    window.slideRight = slideRight;
+  });
+</script>
+
+<script>
+  function updateClock() {
+    const clock = document.getElementById('live-clock');
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-MY', {
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    clock.textContent = timeStr;
+  }
+
+  function showClockAlert() {
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-MY', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    const timeStr = now.toLocaleTimeString('en-MY');
+    alert(`📅 Today is ${dateStr}\n⏰ Current Time: ${timeStr}`);
+  }
+
+</script>
+
+<script>
+  // Quantity buttons for all cards
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+
+    cards.forEach(function (card) {
+      const minusBtn = card.querySelectorAll('.qty-btn')[0];
+      const plusBtn = card.querySelectorAll('.qty-btn')[1];
+      const qtyDisplay = card.querySelector('.qty-number');
+
+      minusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        if (currentQty > 1) {
+          qtyDisplay.textContent = currentQty - 1;
+        }
+      });
+
+      plusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        qtyDisplay.textContent = currentQty + 1;
+      });
+    });
+  });
+
+  // Add to Cart with Quantity
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+    cards.forEach(card => {
+      if (card.innerText.includes(name)) {
+        const qty = parseInt(card.querySelector('.qty-number').textContent);
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity += qty;
+        } else {
+          cart.push({ name, price, quantity: qty });
+        }
+      }
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+  }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">CHARMORA</div>
+    <div class="footer-menus">
+      <ul>
+        <li>Legal Notice</li>
+        <li>Terms of Service</li>
+        <li>Privacy Policy</li>
+        <li>Shipping Policy</li>
+        <li>Return policy</li>
+        <li>Refund Policy</li>
+        <li>Do not sell or share my personal information</li>
+      </ul>
+      <ul>
+        <li>Home</li>
+        <li>Original Bracelet</li>
+        <li>All Charms</li>
+        <li>Become An Affiliate</li>
+        <li>Our Story</li>
+        <li>Tracking</li>
+        <li>Contact us</li>
+      </ul>
+    </div>
+    <div class="footer-follow">
+  <a href="https://www.instagram.com/charmsoff_/" target="_blank" class="follow-button">💜 Follow on shop</a>
+</div>
+
+    <div class="footer-bottom">
+      <div class="selects">
+        <select>
+          <option>Malaysia (MYR RM)</option>
+        </select>
+        <select>
+          <option>English</option>
+        </select>
+      </div>
+     <div class="payments">
+  <a href="https://www.apple.com/my/payment-methods/" target="_blank">
+    <img src="https://i.pcmag.com/imagery/reviews/02RJy7OTtPnQQjh37yQDNqx-15..v1598973550.png" alt="Apple Pay" />
+  </a>
+  <a href="https://www.visa.com.my/pay-with-visa/click-to-pay-with-visa.html" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/100px-Visa.svg.png" alt="Visa" />
+  </a>
+  <a href="https://src.mastercard.com/profile/enroll?cmp=my.en-my.ap.mccom.getStarted&locale=en_MY" target="_blank">
+    <img src="https://logoeps.com/wp-content/uploads/2011/08/mastercard-logo.png" alt="MasterCard" />
+  </a>
+</div>
+      <p class="copyright">© 2025, IMD318 GROUP ASSIGNMENT</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

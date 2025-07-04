@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - Charmora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <h2>Create Charmora Account</h2>
+    <form onsubmit="signUp(event)">
+      <input type="text" id="signup-username" placeholder="Username" required><br>
+      <input type="password" id="signup-password" placeholder="Password" required><br>
+      <input type="submit" value="Sign Up">
+    </form>
+    <div class="links">
+      <a href="login.html">Back to Login</a>
+    </div>
+  </div>
+  <script>
+    function signUp(event) {
+      event.preventDefault();
+      const username = document.getElementById("signup-username").value.trim();
+      const password = document.getElementById("signup-password").value.trim();
+      const existingUser = JSON.parse(localStorage.getItem("matchaUser"));
+      if (existingUser && existingUser.username === username) {
+        alert("Username already exists. Please use a different one.");
+        return;
+      }
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+      }
+      localStorage.setItem("matchaUser", JSON.stringify({ username, password }));
+      alert("Account created! Please log in.");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

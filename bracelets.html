@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bracelets – MyItalianBracelet</title>
+  <link rel="stylesheet" href="style.css"> <!-- Your custom CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Floating Clock and Back to Home -->
+<div class="floating-clock" onclick="showClockAlert()">
+  ⏰ <span id="live-clock">--:--:--</span>
+</div>
+<a href="index.html" class="floating-home-button">Back to Home</a>
+
+<!-- Navigation -->
+<a href="logout.html" class="logout-btn">Log Out</a>
+<div class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="logo1.png" alt="Logo Charmora" />
+    </div>
+   <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <div class="dropdown">
+            <a href="#products" class="dropbtn">Products ⌄</a>
+             <div class="dropdown-content">
+             <a href="bracelets.html">Bracelets</a>
+             <a href="charms.html">Charms</a>
+          </div>
+          </div>
+          <a href="news.html">News</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact us</a>
+          <a href="marketing.html">Marketing</a>
+          <a href="reviews.html">Rating</a>
+          <a href="logout.html" class="logout-icon" title="Log Out">
+            <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/c4/logout-31dva2zl3l9ao92pwnmgnt.png/logout-6bjs3s3fnciv7c0ye52y3l.png?_a=DATAdtAAZAA0" alt="Logout Icon" />
+          </a>
+        </nav>
+    <a href="cart.html" class="cart-icon" style="cursor: pointer; display: flex; align-items: center; text-decoration: none;">
+      <img src="https://static.vecteezy.com/system/resources/previews/004/705/202/original/shopping-cart-icon-design-symbol-trolley-cart-basket-commerce-for-ecommerce-free-vector.jpg" alt="Cart Icon" style="width: 30px; height: 30px; object-fit: contain; margin-right: 5px;">
+      <span id="cart-count">0</span>
+    </a>
+  </div>
+</div>
+
+<!-- Hero Section using .products-home -->
+<section class="products-home">
+  <img src="https://i.pinimg.com/1200x/d4/c4/d6/d4c4d6d1bc7b841171922024a5141e3f.jpg" alt="Products Header" class="products-header-img">
+  <div class="hero-text-alt">
+    <h1>Bracelets</h1>
+    <p>Minimalist base bracelets designed to be worn solo or customized with your favorite charms.</p>
+    <p>✔ Waterproof &nbsp; ✔ Stainless Steel &nbsp; ✔ Charm-Ready Design</p>
+</div>
+</section>
+
+<!-- Products Grid -->
+<div class="grid">
+  <div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/89/be/fc/89befcce19f836443992f1de21559568.jpg" alt="Bracelet 1">
+    <p><b>Silver Bracelet</b></p>
+    <p>RM8.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Silver Bracelet', 8.00)">Add to Cart</button>
+  </div>
+
+  <div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/ae/1a/20/ae1a20b98649db62ac90214fcae5ac3f.jpg" alt="Bracelet 2">
+    <p><b>Rose Gold Bracelet</b></p>
+    <p>RM14.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Rose Gold Bracelet', 14.00)">Add to Cart</button>
+  </div>
+
+  <div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/a9/34/01/a934019d8a57168732f7bf858e1072b7.jpg" alt="Bracelet 3">
+    <p><b>Black-Silver Bracelet</b></p>
+    <p>RM10.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Black-Silver Bracelet', 10.00)">Add to Cart</button>
+  </div>
+
+    <div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/bf/f9/47/bff94787bdd9d6272934e1b7bbfeaf46.jpg" alt="Bracelet 4">
+    <p><b>Black Bracelet</b></p>
+    <p>RM14.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Black Bracelet', 14.00)">Add to Cart</button>
+  </div>
+
+  <div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/78/ab/a0/78aba06de435ae1982d8d9e6d857c04c.jpg" alt="Bracelet 5">
+    <p><b>Dark Blue Bracelet</b></p>
+    <p>RM14.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Dark Blue Bracelet', 14.00)">Add to Cart</button>
+  </div>
+
+  <div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/5e/27/3e/5e273edcbda018fe820e11c0abd4c5a6.jpg" alt="Bracelet 6">
+    <p><b>Gold Bracelet</b></p>
+    <p>RM16.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Gold Bracelet', 16.00)">Add to Cart</button>
+  </div>
+
+  <div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/cb/fb/92/cbfb9250246fbe9b2365e69cba158b67.jpg" alt="Bracelet 7">
+    <p><b>Love-Silver Bracelet</b></p>
+    <p>RM10.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Love-Silver Bracelet', 10.00)">Add to Cart</button>
+  </div>
+
+  <div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/a5/91/e8/a591e8e2e8fe6624cd3c375428fa5723.jpg" alt="Bracelet 8">
+    <p><b>Love-Gold Silver Bracelet</b></p>
+    <p>RM10.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+  <button class="cart-btn" onclick="addToCart('Love-Gold Silver Bracelet', 10.00)">Add to Cart</button>
+</div>
+
+<script>
+  // Quantity buttons for all cards
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+
+    cards.forEach(function (card) {
+      const minusBtn = card.querySelectorAll('.qty-btn')[0];
+      const plusBtn = card.querySelectorAll('.qty-btn')[1];
+      const qtyDisplay = card.querySelector('.qty-number');
+
+      minusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        if (currentQty > 1) {
+          qtyDisplay.textContent = currentQty - 1;
+        }
+      });
+
+      plusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        qtyDisplay.textContent = currentQty + 1;
+      });
+    });
+  });
+
+  // Add to Cart with Quantity
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+    cards.forEach(card => {
+      if (card.innerText.includes(name)) {
+        const qty = parseInt(card.querySelector('.qty-number').textContent);
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity += qty;
+        } else {
+          cart.push({ name, price, quantity: qty });
+        }
+      }
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+  }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+  
+
+<script>
+  const scrollContainer = document.getElementById("slider");
+  function slideRight() {
+    scrollContainer.scrollBy({ left: 250, behavior: 'smooth' });
+  }
+  function slideLeft() {
+    scrollContainer.scrollBy({ left: -250, behavior: 'smooth' });
+  }
+</script>
+
+<script>
+  // Update digital clock every second
+  function updateClock() {
+    const clock = document.getElementById('live-clock');
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-MY', {
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    if (clock) {
+      clock.textContent = timeStr;
+    }
+  }
+
+  // Show current date and time in alert popup
+  function showClockAlert() {
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-MY', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    const timeStr = now.toLocaleTimeString('en-MY');
+    alert(`📅 Today is ${dateStr}\n⏰ Current Time: ${timeStr}`);
+  }
+
+  // Start the live clock
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+
+</body>
+</html>

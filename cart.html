@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css"> <!-- Your custom CSS -->
+  <title>Your Cart</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .cart-item-box {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-remove-btn {
+      color: red;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .cart-total-section {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .cart-checkout-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Clock and Back to Home -->
+  <div class="floating-clock" onclick="showClockAlert()">
+    ⏰ <span id="live-clock">--:--:--</span>
+  </div>
+  <a href="index.html" class="floating-home-button">Back to Home</a>
+
+  <!-- Navigation -->
+  <a href="logout.html" class="logout-btn">Log Out</a>
+  <div class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="logo1.png" alt="Logo Charmora" />
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <div class="dropdown">
+          <a href="#products" class="dropbtn">Products ⌄</a>
+          <div class="dropdown-content">
+            <a href="bracelets.html">Bracelets</a>
+            <a href="charms.html">Charms</a>
+          </div>
+        </div>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact us</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="rating.html">Rating</a>
+        <a href="logout.html" class="logout-icon" title="Log Out">
+          <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/c4/logout-31dva2zl3l9ao92pwnmgnt.png/logout-6bjs3s3fnciv7c0ye52y3l.png?_a=DATAdtAAZAA0" alt="Logout Icon" />
+        </a>
+      </nav>
+      <a href="cart.html" class="cart-icon" style="cursor: pointer; display: flex; align-items: center; text-decoration: none;">
+  <img src="https://static.vecteezy.com/system/resources/previews/004/705/202/original/shopping-cart-icon-design-symbol-trolley-cart-basket-commerce-for-ecommerce-free-vector.jpg" alt="Cart Icon" style="width: 30px; height: 30px; object-fit: contain; margin-right: 5px;">
+  <span id="cart-count">0</span>
+</a>
+      </a>
+    </div>
+  </div>
+
+  <h1>Your Cart</h1>
+  <div id="cart-list-box"></div>
+  <div class="cart-total-section" id="cart-total-price"></div>
+  <a class="cart-checkout-btn" href="checkout.html">Proceed to Checkout</a>
+
+  <script>
+    const cartList = document.getElementById('cart-list-box');
+    const totalPriceEl = document.getElementById('cart-total-price');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function displayCart() {
+      cartList.innerHTML = '';
+      let grandTotal = 0;
+
+      if (cart.length === 0) {
+        cartList.innerHTML = "<p>Your cart is empty.</p>";
+        totalPriceEl.textContent = '';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'cart-item-box';
+
+        const qty = item.quantity || 1;
+        const itemTotal = item.price * qty;
+        grandTotal += itemTotal;
+
+        div.innerHTML = `
+          ${item.name} (x${qty}) – RM${itemTotal.toFixed(2)}
+          <span class="cart-remove-btn" onclick="removeFromCart(${index})">X</span>
+        `;
+        cartList.appendChild(div);
+      });
+
+      totalPriceEl.textContent = `Total: RM${grandTotal.toFixed(2)}`;
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart();
+    }
+
+    displayCart();
+  </script>
+
+  <script>
+    function updateClock() {
+      const clock = document.getElementById('live-clock');
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('en-MY', {
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      clock.textContent = timeStr;
+    }
+
+    function showClockAlert() {
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-MY', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      const timeStr = now.toLocaleTimeString('en-MY');
+      alert(`🗓 Today is ${dateStr}\n⏰ Current Time: ${timeStr}`);
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+<script>
+  // Quantity buttons for all cards
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+
+    cards.forEach(function (card) {
+      const minusBtn = card.querySelectorAll('.qty-btn')[0];
+      const plusBtn = card.querySelectorAll('.qty-btn')[1];
+      const qtyDisplay = card.querySelector('.qty-number');
+
+      minusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        if (currentQty > 1) {
+          qtyDisplay.textContent = currentQty - 1;
+        }
+      });
+
+      plusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        qtyDisplay.textContent = currentQty + 1;
+      });
+    });
+  });
+
+  // Add to Cart with Quantity
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+    cards.forEach(card => {
+      if (card.innerText.includes(name)) {
+        const qty = parseInt(card.querySelector('.qty-number').textContent);
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity += qty;
+        } else {
+          cart.push({ name, price, quantity: qty });
+        }
+      }
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+  }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Charmora News & Updates</title>
+  <link rel="stylesheet" href="style.css"> <!-- Your custom CSS -->
+</head>
+<body>
+
+    <!-- Floating Clock and Back to Home -->
+<div class="floating-clock" onclick="showClockAlert()">
+  ⏰ <span id="live-clock">--:--:--</span>
+</div>
+<a href="index.html" class="floating-home-button">Back to Home</a>
+
+<!-- Navigation -->
+<a href="logout.html" class="logout-btn">Log Out</a>
+<div class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="logo1.png" alt="Logo Charmora" />
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <div class="dropdown">
+            <a href="product.html" class="dropbtn">Products ⌄</a>
+             <div class="dropdown-content">
+             <a href="bracelets.html">Bracelets</a>
+             <a href="charms.html">Charms</a>
+          </div>
+          </div>
+          <a href="news.html">News</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact us</a>
+          <a href="marketing.html">Marketing</a>
+          <a href="reviews.html">Rating</a>
+          <a href="logout.html" class="logout-icon" title="Log Out">
+            <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/c4/logout-31dva2zl3l9ao92pwnmgnt.png/logout-6bjs3s3fnciv7c0ye52y3l.png?_a=DATAdtAAZAA0" alt="Logout Icon" />
+          </a>
+    </nav>
+   <a href="cart.html" class="cart-icon" style="cursor: pointer; display: flex; align-items: center; text-decoration: none;">
+  <img src="https://static.vecteezy.com/system/resources/previews/004/705/202/original/shopping-cart-icon-design-symbol-trolley-cart-basket-commerce-for-ecommerce-free-vector.jpg" alt="Cart Icon" style="width: 30px; height: 30px; object-fit: contain; margin-right: 5px;">
+  <span id="cart-count">0</span>
+</a>
+  </div>
+</div>
+
+<div class="hero-carousel">
+  <a href="https://www.pinterest.com/pin/310466968083706742/" target="_blank">
+    <img src="https://i.pinimg.com/736x/2c/86/cd/2c86cd454d3b12230726f4f162ca1bdf.jpg" alt="Slide 1" />
+  </a>
+  <a href="https://www.pinterest.com/pin/690950767875648005/" target="_blank">
+    <img src="https://i.pinimg.com/736x/96/ff/97/96ff97c486a5e4bf4c5dd49c5e4b8ec1.jpg" alt="Slide 2" />
+  </a>
+  <a href="https://www.pinterest.com/pin/895301600926751659/" target="_blank">
+    <img src="https://i.pinimg.com/736x/da/4e/e9/da4ee9b5f9d21a6bcde706cf9638a0b0.jpg" alt="Slide 3" />
+  </a>
+  <a href="https://www.pinterest.com/pin/581175526953823079/" target="_blank">
+    <img src="https://i.pinimg.com/736x/2a/fa/55/2afa55d0d41c5b55230e4e6ce6096dca.jpg" alt="Slide 4" />
+  </a>
+  <a href="https://www.pinterest.com/pin/585890232815634899/" target="_blank">
+    <img src="https://i.pinimg.com/736x/e9/2f/89/e92f89daae19ec3c6eeaf876f986b2c8.jpg" alt="Slide 5" />
+  </a>
+</div>
+
+<!-- News Section -->
+    <div class="about-content" id="about">
+      <h2 class="fancy-heading"> Charmora News & Updates </h2>
+      <p class="intro-text">Stay updated with the latest trends, tips, and stories about Italian charm bracelets — from new arrivals to customer favorites.</p>
+
+
+  <div class="news-grid">
+    <!-- Cards dengan data-id -->
+    <div class="card" onclick="openModal(1)">
+      <img src="https://i.pinimg.com/736x/6e/66/0f/6e660f336b6d574c78b00b27bd029389.jpg" alt="Clean Bracelet" />
+      <div class="text">
+        <strong>How to Clean Your Italian Charm Bracelet</strong>
+        <small>June 25, 2025</small>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal(2)">
+      <img src="https://i.pinimg.com/736x/00/84/09/008409bad328513308fb340e95970838.jpg" alt="Customer Story" />
+      <div class="text">
+        <strong>Customer Story: My First Italian Charm Bracelet</strong>
+        <small>June 3, 2025</small>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal(3)">
+      <img src="https://i.pinimg.com/736x/c6/62/91/c662914b37086d3483dea0960648bfcc.jpg" alt="Resize Bracelet" />
+      <div class="text">
+        <strong>How to Connect and Resize Your Charm Bracelet</strong>
+        <small>May 15, 2025</small>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal(4)">
+      <img src="https://i.pinimg.com/736x/62/a6/dc/62a6dca3bb42dd73acddbf034144ff8e.jpg" alt="Limited Edition Drop" />
+      <div class="text">
+        <strong>Limited Edition Charms Drop This Weekend!</strong>
+        <small>April 30, 2025</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal tunggal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <img id="modal-img" src="" alt="" />
+      <h3 id="modal-title"></h3>
+      <small><em id="modal-date"></em></small>
+      <p id="modal-content-1"></p>
+      <p id="modal-content-2"></p>
+      <ul id="modal-list"></ul>
+    </div>
+  </div>
+
+<script>
+  // Data modal untuk setiap card
+  const modalData = {
+    1: {
+      img: "https://i.pinimg.com/736x/6e/66/0f/6e660f336b6d574c78b00b27bd029389.jpg",
+      title: "How to Clean Your Italian Charm Bracelet",
+      date: "By Charmora · June 25, 2025",
+      content1: "Gently clean your bracelet using a soft cloth and mild soap. Avoid harsh chemicals to keep your charms shining for years.",
+      content2: "To maintain the shine and durability of your Italian charm bracelet, clean it regularly and store it properly. Avoid exposing it to perfumes, lotions, or water for extended periods.",
+      list: [
+        "Use a soft toothbrush to clean hard-to-reach areas gently.",
+        "Dry your bracelet thoroughly after cleaning to prevent tarnish.",
+        "Avoid wearing your bracelet while swimming or showering.",
+        "Store your bracelet in a soft pouch or jewelry box to avoid scratches."
+    ]
+    },
+    2: {
+      img: "https://i.pinimg.com/736x/00/84/09/008409bad328513308fb340e95970838.jpg",
+      title: "Customer Story: My First Italian Charm Bracelet",
+      date: "By Charmora · June 3, 2025",
+      content1: "Hear from one of our happy customers about their first Italian charm bracelet experience and what makes it so special.",
+      content2: "Our bracelets aren’t just accessories — they’re keepsakes that capture memories and milestones. Each charm represents a story, making every bracelet uniquely personal.",
+      list: [
+         "Customer highlights the exceptional quality and timeless design.",
+         "Personalized charms add sentimental value and a unique touch.",
+         "Perfect gift for marking special occasions and memories."
+    ]
+    },
+    3: {
+      img: "https://i.pinimg.com/736x/c6/62/91/c662914b37086d3483dea0960648bfcc.jpg",
+      title: "How to Connect and Resize Your Charm Bracelet",
+      date: "By Charmora · May 15, 2025",
+      content1: "Learn step-by-step how to adjust your Italian charm bracelet to fit perfectly and comfortably on your wrist.",
+      content2: "Follow our simple guide to connect charms and resize your bracelet easily at home or with professional help.",
+      list: [
+         "Use the clasp or extender chain to add or remove links for the right fit.",
+         "Ensure each charm is securely fastened to avoid losing them.",
+         "Consider visiting a jeweler for precise resizing if needed.",
+         "Regularly check your bracelet for loose charms or links."
+    ]
+    },
+    4: {
+      img: "https://i.pinimg.com/736x/62/a6/dc/62a6dca3bb42dd73acddbf034144ff8e.jpg",
+      title: "Limited Edition Charms Drop This Weekend!",
+      date: "By Charmora · April 30, 2025",
+      content1: "Don’t miss out on our exclusive limited edition charms available only this weekend. These unique pieces are crafted to add a special touch to your collection.",
+      content2: "Whether you’re treating yourself or gifting a loved one, these charms make unforgettable keepsakes. Act fast before they sell out!",
+      list: [
+         "Unique, limited-run designs you won’t find anywhere else.",
+         "Special discounts and offers during the launch weekend.",
+         "Perfect for collectors and charm bracelet enthusiasts.",
+         "Add a personal and exclusive flair to your bracelet."
+    ]
+    }
+  };
+
+  function openModal(id) {
+    const data = modalData[id];
+    if (!data) return;
+
+    // Populate modal content
+    document.getElementById('modal-img').src = data.img;
+    document.getElementById('modal-img').alt = data.title;
+    document.getElementById('modal-title').textContent = data.title;
+    document.getElementById('modal-date').textContent = data.date;
+    document.getElementById('modal-content-1').textContent = data.content1;
+    document.getElementById('modal-content-2').textContent = data.content2;
+
+    // Fill list
+    const listElem = document.getElementById('modal-list');
+    listElem.innerHTML = '';
+    data.list.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      listElem.appendChild(li);
+    });
+
+    // Show modal
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  // Tutup modal jika klik luar content
+  window.onclick = function(event) {
+    const modal = document.getElementById('modal');
+    if (event.target === modal) {
+      closeModal();
+    }
+  }
+</script>
+
+<script src="modalData.js"></script>
+<script>
+  function updateClock() {
+    const clock = document.getElementById('live-clock');
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-MY', {
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    clock.textContent = timeStr;
+  }
+
+  function showClockAlert() {
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-MY', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    const timeStr = now.toLocaleTimeString('en-MY');
+    alert(`🗓 Today is ${dateStr}\n⏰ Current Time: ${timeStr}`);
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+
+<script>
+  // Quantity buttons for all cards
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+
+    cards.forEach(function (card) {
+      const minusBtn = card.querySelectorAll('.qty-btn')[0];
+      const plusBtn = card.querySelectorAll('.qty-btn')[1];
+      const qtyDisplay = card.querySelector('.qty-number');
+
+      minusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        if (currentQty > 1) {
+          qtyDisplay.textContent = currentQty - 1;
+        }
+      });
+
+      plusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        qtyDisplay.textContent = currentQty + 1;
+      });
+    });
+  });
+
+  // Add to Cart with Quantity
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+    cards.forEach(card => {
+      if (card.innerText.includes(name)) {
+        const qty = parseInt(card.querySelector('.qty-number').textContent);
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity += qty;
+        } else {
+          cart.push({ name, price, quantity: qty });
+        }
+      }
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+  }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">CHARMORA</div>
+    <div class="footer-menus">
+      <ul>
+        <li>Legal Notice</li>
+        <li>Terms of Service</li>
+        <li>Privacy Policy</li>
+        <li>Shipping Policy</li>
+        <li>Return policy</li>
+        <li>Refund Policy</li>
+        <li>Do not sell or share my personal information</li>
+      </ul>
+      <ul>
+        <li>Home</li>
+        <li>Original Bracelet</li>
+        <li>All Charms</li>
+        <li>Become An Affiliate</li>
+        <li>Our Story</li>
+        <li>Tracking</li>
+        <li>Contact us</li>
+      </ul>
+    </div>
+    <div class="footer-follow">
+  <a href="https://www.instagram.com/charmsoff_/" target="_blank" class="follow-button">💜 Follow on shop</a>
+</div>
+
+    <div class="footer-bottom">
+      <div class="selects">
+        <select>
+          <option>Malaysia (MYR RM)</option>
+        </select>
+        <select>
+          <option>English</option>
+        </select>
+      </div>
+     <div class="payments">
+  <a href="https://www.apple.com/my/payment-methods/" target="_blank">
+    <img src="https://i.pcmag.com/imagery/reviews/02RJy7OTtPnQQjh37yQDNqx-15..v1598973550.png" alt="Apple Pay" />
+  </a>
+  <a href="https://www.visa.com.my/pay-with-visa/click-to-pay-with-visa.html" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/100px-Visa.svg.png" alt="Visa" />
+  </a>
+  <a href="https://src.mastercard.com/profile/enroll?cmp=my.en-my.ap.mccom.getStarted&locale=en_MY" target="_blank">
+    <img src="https://logoeps.com/wp-content/uploads/2011/08/mastercard-logo.png" alt="MasterCard" />
+  </a>
+</div>
+      <p class="copyright">© 2025, IMD318 GROUP ASSIGNMENT</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

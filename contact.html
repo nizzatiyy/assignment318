@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charmora | Accessories Jewelry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://www.svgrepo.com/show/414284/charm.svg" type="image/png">
+  <!-- Font Awesome CDN for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+ 
+  <header class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img src="logo1.png" alt="Logo Charmora" />
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <div class="dropdown">
+            <a href="product.html" class="dropbtn">Products ⌄</a>
+             <div class="dropdown-content">
+             <a href="bracelets.html">Bracelets</a>
+             <a href="charms.html">Charms</a>
+          </div>
+          </div>
+          <a href="news.html">News</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact us</a>
+          <a href="marketing.html">Marketing</a>
+          <a href="reviews.html">Rating</a>
+          <a href="logout.html" class="logout-icon" title="Log Out">
+            <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/c4/logout-31dva2zl3l9ao92pwnmgnt.png/logout-6bjs3s3fnciv7c0ye52y3l.png?_a=DATAdtAAZAA0" alt="Logout Icon" />
+          </a>
+          </nav>
+        <a href="cart.html" class="cart-icon" style="cursor: pointer; display: flex; align-items: center; text-decoration: none;">
+  <img src="https://static.vecteezy.com/system/resources/previews/004/705/202/original/shopping-cart-icon-design-symbol-trolley-cart-basket-commerce-for-ecommerce-free-vector.jpg" alt="Cart Icon" style="width: 30px; height: 30px; object-fit: contain; margin-right: 5px;">
+  <span id="cart-count">0</span>
+</a>
+</div>
+  </div>
+</div>
+    
+  <div class="hero-carousel">
+  <a href="https://www.pinterest.com/pin/310466968083706742/" target="_blank">
+    <img src="https://i.pinimg.com/736x/2c/86/cd/2c86cd454d3b12230726f4f162ca1bdf.jpg" alt="Slide 1" />
+  </a>
+  <a href="https://www.pinterest.com/pin/690950767875648005/" target="_blank">
+    <img src="https://i.pinimg.com/736x/96/ff/97/96ff97c486a5e4bf4c5dd49c5e4b8ec1.jpg" alt="Slide 2" />
+  </a>
+  <a href="https://www.pinterest.com/pin/895301600926751659/" target="_blank">
+    <img src="https://i.pinimg.com/736x/da/4e/e9/da4ee9b5f9d21a6bcde706cf9638a0b0.jpg" alt="Slide 3" />
+  </a>
+  <a href="https://www.pinterest.com/pin/581175526953823079/" target="_blank">
+    <img src="https://i.pinimg.com/736x/2a/fa/55/2afa55d0d41c5b55230e4e6ce6096dca.jpg" alt="Slide 4" />
+  </a>
+  <a href="https://www.pinterest.com/pin/585890232815634899/" target="_blank">
+    <img src="https://i.pinimg.com/736x/e9/2f/89/e92f89daae19ec3c6eeaf876f986b2c8.jpg" alt="Slide 5" />
+  </a>
+</div>
+
+<!-- 🌟 Floating Clock and Back to Home -->
+<div class="floating-clock" onclick="showClockAlert()">
+  ⏰ <span id="live-clock">--:--:--</span>
+</div>
+
+<a href="index.html" class="floating-home-button">Back to Home</a>
+
+<section id="contact" class="contact-section">
+  <h2 class="section-title">Contact Us</h2>
+
+  <div class="contact-wrapper">
+    <!-- ✉️ Contact Form -->
+    <form id="whatsapp-form" class="contact-form" onsubmit="return sendToWhatsApp();">
+  <label for="name">Your Name</label>
+  <input type="text" id="name" required>
+
+  <label for="email">Your Email</label>
+  <input type="email" id="email" required>
+
+  <label for="message">Your Message</label>
+  <textarea id="message" rows="5" required></textarea>
+
+  <button type="submit">Send via WhatsApp</button>
+</form>
+
+    <!-- 📱 Social Info -->
+<div class="contact-info">
+  <h3>Connect With Us</h3>
+  <p>For collaborations, styling sessions, or press inquiries, reach out via:</p>
+  <ul class="social-links">
+    <li>
+      <a href="https://instagram.com/charmorajewels" target="_blank">
+        <i class="fab fa-instagram"></i> @charmorajewels
+      </a>
+    </li>
+    <li>
+      <a href="https://facebook.com/CharmoraOfficial" target="_blank">
+        <i class="fab fa-facebook-f"></i> Charmora Official
+      </a>
+    </li>
+    <li>
+      <a href="mailto:hello@charmora.com">
+        <i class="fas fa-envelope"></i> hello@charmora.com
+      </a>
+    </li>
+    <li>
+      <a href="tel:+60123456789">
+        <i class="fas fa-phone-alt"></i> +60 12-345 6789
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <!-- 🔔 Notification Popup -->
+  <div class="notification" id="form-notification">
+  <strong>✅ Message Sent!</strong> We'll get back to you within 24 hours.
+</div>
+
+  <!-- ❓ FAQ Section -->
+<div class="faq-section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">Do you ship internationally?</button>
+    <div class="faq-answer">Yes, we ship worldwide with secure tracked shipping.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I customize a jewelry piece?</button>
+    <div class="faq-answer">Absolutely! We offer personalized design options — contact us to discuss your dream piece.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Where is your studio located?</button>
+    <div class="faq-answer">We are in the heart of Kuala Lumpur near Bukit Bintang MRT station.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">How long does delivery take?</button>
+    <div class="faq-answer">Delivery within Malaysia takes 3–5 working days. International shipping may take 7–14 days, depending on the destination.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">What materials do you use?</button>
+    <div class="faq-answer">We use premium 925 sterling silver, 18K gold plating, freshwater pearls, and hypoallergenic materials to ensure luxury and comfort.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Do you offer gift wrapping or packaging?</button>
+    <div class="faq-answer">Yes! All orders come in our signature Charmora gift box, with optional handwritten cards upon request.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I return or exchange an item?</button>
+    <div class="faq-answer">Returns are accepted within 14 days for unworn items with original packaging. Exchanges are subject to availability.</div>
+  </div>
+</div>
+
+
+
+<!-- ⏰ Floating Clock -->
+<div class="floating-clock" onclick="showClockAlert()">
+  ⏰ <span id="live-clock">--:--:--</span>
+</div>
+
+<a href="index.html" class="floating-home-button">Back to Home</a>
+
+
+<!-- End of contact section -->
+</div> <!-- close any open wrapper -->
+
+<hr style="border: none; height: 1px; background: #ccc; margin: 60px 0;" />
+
+<!-- END of your contact section or any container -->
+</div> <!-- close contact-wrapper or section -->
+
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">CHARMORA</div>
+    <div class="footer-menus">
+      <ul>
+        <li>Legal Notice</li>
+        <li>Terms of Service</li>
+        <li>Privacy Policy</li>
+        <li>Shipping Policy</li>
+        <li>Return policy</li>
+        <li>Refund Policy</li>
+        <li>Do not sell or share my personal information</li>
+      </ul>
+      <ul>
+        <li>Home</li>
+        <li>Original Bracelet</li>
+        <li>All Charms</li>
+        <li>Become An Affiliate</li>
+        <li>Our Story</li>
+        <li>Tracking</li>
+        <li>Contact us</li>
+      </ul>
+    </div>
+    <div class="footer-follow">
+  <a href="https://www.instagram.com/charmsoff_/" target="_blank" class="follow-button">💜 Follow on shop</a>
+</div>
+
+    <div class="footer-bottom">
+      <div class="selects">
+        <select>
+          <option>Malaysia (MYR RM)</option>
+        </select>
+        <select>
+          <option>English</option>
+        </select>
+      </div>
+     <div class="payments">
+  <a href="https://www.apple.com/my/payment-methods/" target="_blank">
+    <img src="https://i.pcmag.com/imagery/reviews/02RJy7OTtPnQQjh37yQDNqx-15..v1598973550.png" alt="Apple Pay" />
+  </a>
+  <a href="https://www.visa.com.my/pay-with-visa/click-to-pay-with-visa.html" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/100px-Visa.svg.png" alt="Visa" />
+  </a>
+  <a href="https://src.mastercard.com/profile/enroll?cmp=my.en-my.ap.mccom.getStarted&locale=en_MY" target="_blank">
+    <img src="https://logoeps.com/wp-content/uploads/2011/08/mastercard-logo.png" alt="MasterCard" />
+  </a>
+</div>
+      <p class="copyright">© 2025, IMD318 GROUP ASSIGNMENT</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Clock Script -->
+<script>
+
+  function updateClock() {
+    const clock = document.getElementById('live-clock');
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-MY', {
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    clock.textContent = timeStr;
+  }
+
+  function showClockAlert() {
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-MY', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    const timeStr = now.toLocaleTimeString('en-MY');
+    alert(`📅 Today is ${dateStr}\n⏰ Current Time: ${timeStr}`);
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock(); // Call once on load
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const notification = document.getElementById("form-notification");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = form.querySelector('input[name="name"]').value.trim();
+    const email = form.querySelector('input[name="email"]').value.trim();
+    const message = form.querySelector('textarea[name="message"]').value.trim();
+
+    if (name && email && message) {
+      notification.style.display = "block"; // Show notification
+
+      // Auto-hide after 3 seconds
+      setTimeout(() => {
+        notification.style.display = "none";
+      }, 3000);
+
+      form.reset(); // Optional reset
+    } else {
+      alert("Please fill out all fields before submitting.");
+    }
+  });
+});
+
+function sendToWhatsApp() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill out all fields.");
+    return false;
+  }
+
+  const phoneNumber = "601156495116"; // Your WhatsApp number (without +)
+  const encodedMsg = encodeURIComponent(
+    `Hello Charmora Team! 💖\n\n👩 Name: ${name}\n📧 Email: ${email}\n💬 Message: ${message}`
+  );
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
+  window.open(whatsappURL, '_blank');
+  return false; // prevent default form submit
+}
+
+
+// FAQ toggle logic
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const answer = button.nextElementSibling;
+    const isVisible = answer.style.display === 'block';
+    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+    answer.style.display = isVisible ? 'none' : 'block';
+  });
+});
+</script>
+
+<script>
+  // Quantity buttons for all cards
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+
+    cards.forEach(function (card) {
+      const minusBtn = card.querySelectorAll('.qty-btn')[0];
+      const plusBtn = card.querySelectorAll('.qty-btn')[1];
+      const qtyDisplay = card.querySelector('.qty-number');
+
+      minusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        if (currentQty > 1) {
+          qtyDisplay.textContent = currentQty - 1;
+        }
+      });
+
+      plusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        qtyDisplay.textContent = currentQty + 1;
+      });
+    });
+  });
+
+  // Add to Cart with Quantity
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+    cards.forEach(card => {
+      if (card.innerText.includes(name)) {
+        const qty = parseInt(card.querySelector('.qty-number').textContent);
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity += qty;
+        } else {
+          cart.push({ name, price, quantity: qty });
+        }
+      }
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+  }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+
+</body>
+</html>

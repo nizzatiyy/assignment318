@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bracelets – MyItalianBracelet</title>
+  <link rel="stylesheet" href="style.css"> <!-- Your custom CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Floating Clock and Back to Home -->
+<div class="floating-clock" onclick="showClockAlert()">
+  ⏰ <span id="live-clock">--:--:--</span>
+</div>
+<a href="index.html" class="floating-home-button">Back to Home</a>
+
+<!-- Navigation -->
+<a href="logout.html" class="logout-btn">Log Out</a>
+<div class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="logo1.png" alt="Logo Charmora" />
+    </div>
+   <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <div class="dropdown">
+            <a href="product.html" class="dropbtn">Products ⌄</a>
+             <div class="dropdown-content">
+             <a href="bracelets.html">Bracelets</a>
+             <a href="charms.html">Charms</a>
+          </div>
+          </div>
+          <a href="news.html">News</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact us</a>
+          <a href="marketing.html">Marketing</a>
+          <a href="reviews.html">Rating</a>
+          <a href="logout.html" class="logout-icon" title="Log Out">
+            <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/c4/logout-31dva2zl3l9ao92pwnmgnt.png/logout-6bjs3s3fnciv7c0ye52y3l.png?_a=DATAdtAAZAA0" alt="Logout Icon" />
+          </a>
+        </nav>
+    <a href="cart.html" class="cart-icon" style="cursor: pointer; display: flex; align-items: center; text-decoration: none;">
+      <img src="https://static.vecteezy.com/system/resources/previews/004/705/202/original/shopping-cart-icon-design-symbol-trolley-cart-basket-commerce-for-ecommerce-free-vector.jpg" alt="Cart Icon" style="width: 30px; height: 30px; object-fit: contain; margin-right: 5px;">
+      <span id="cart-count">0</span>
+    </a>
+  </div>
+</div>
+
+<!-- Hero Section using .products-home -->
+<section class="products-home">
+  <img src="https://i.pinimg.com/1200x/97/a5/f0/97a5f0de221fb93019b97e85977d665c.jpg" alt="Charm Header" class="products-header-img">
+  <div class="hero-text-alt">
+    <h1>Charms</h1>
+    <p>Mix, match, and make it yours — every charm tells a story!</p>
+    <p>✔ Long-lasting &nbsp; ✔ Waterproof &nbsp; ✔ Stainless Steel</p>
+  </div>
+</section>
+
+<!-- Products Grid -->
+<div class="grid">
+  <div class="charm-card">
+    <img src="https://i.pinimg.com/736x/d2/6a/f2/d26af2abf197981465eee76216deb5f4.jpg" height="150" alt="Tool">
+    <p><b>Bracelet Tool</b></p>
+    <p>RM5.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Bracelet Tool', 5.00)">Add to Cart</button>
+  </div>
+
+  <div class="charm-card">
+    <img src="https://i.pinimg.com/736x/9d/c0/2b/9dc02b71e9853ff24f8f6162db5e36cb.jpg" alt="Charm 1">
+    <p><b>Black Star</b></p>
+    <p>	RM4.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Black Star', 4.00)">Add to Cart</button>
+  </div>
+
+  <div class="charm-card">
+    <img src="https://i.pinimg.com/736x/25/37/68/253768fe0045b96986bb0e7c7ab9b12d.jpg" alt="Charm 2">
+    <p><b>Gold Spiral</b></p>
+    <p>RM4.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Gold Spiral', 4.50)">Add to Cart</button>
+  </div>
+
+  <div class="charm-card">
+    <img src="https://i.pinimg.com/736x/a0/86/8a/a0868afd8e92f9c92f4ea7a35ffe1074.jpg" alt="Charm 3">
+    <p><b>No Smoking</b></p>
+    <p>RM3.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('No Smoking', 3.50)">Add to Cart</button>
+  </div>
+
+    <div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/b8/05/12/b80512cd5d7a661a3a5912dc767cd8ee.jpg" alt="Charm 4">
+    <p><b>Travel Blue</b></p>
+    <p>RM4.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Travel Blue', 4.50)">Add to Cart</button>
+  </div>
+
+  <div class="charm-card">
+    <img src="https://i.pinimg.com/736x/2c/cc/b3/2cccb31126aa86fde64be755c963d78e.jpg" alt="Charm 5">
+    <p><b>Night Sky</b></p>
+    <p>RM4.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Night Sky', 4.50)">Add to Cart</button>
+  </div>
+
+  <div class="charm-card">
+    <img src="https://i.pinimg.com/736x/5d/61/d9/5d61d9c64b01f5296610940946a3e703.jpg" alt="Charm 6">
+    <p><b>Snail</b></p>
+    <p>RM3.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Snail', 3.50)">Add to Cart</button>
+  </div>
+
+  <div class="charm-card">
+    <img src="https://i.pinimg.com/736x/e8/5b/58/e85b580b8770bdfc4be0f23584100ced.jpg" alt="Charm 7">
+    <p><b>Coffee Lover</b></p>
+    <p>RM4.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+   <button class="cart-btn" onclick="addToCart('Coffee Love', 4.00)">Add to Cart</button>
+  </div>
+
+  <div class="charm-card">
+    <img src="https://i.pinimg.com/736x/2c/bc/00/2cbc006304c818cde4348ea2b7dff2e7.jpg" alt="Charm 8">
+    <p><b>White Mouse</b></p>
+    <p>RM4.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+  <button class="cart-btn" onclick="addToCart('White Mouse', 4.50)">Add to Cart</button>
+</div>
+
+<div class="charm-card">
+    <img src="https://i.pinimg.com/736x/c5/1b/8e/c51b8eb551cd6b85bed40fb88a9d26d6.jpg" alt="Charm 9">
+    <p><b>Piano</b></p>
+    <p>RM4.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+  <button class="cart-btn" onclick="addToCart('Pianot', 4.00)">Add to Cart</button>
+</div>
+
+<div class="charm-card">
+    <img src="https://i.pinimg.com/736x/0c/6f/e2/0c6fe256ab0e6fa0e5d7de3c667194af.jpg" alt="Charm 10">
+    <p><b>Bowling Pint</b></p>
+    <p>RM4.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+  <button class="cart-btn" onclick="addToCart('Bowling Pin', 4.50)">Add to Cart</button>
+</div>
+
+<div class="bracelet-card">
+    <img src="https://i.pinimg.com/736x/7f/5c/b5/7f5cb51ae951aea53580542d43c5a32e.jpg" alt="Charm 11">
+    <p><b>Puzzle</b></p>
+    <p>RM4.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+  <button class="cart-btn" onclick="addToCart('Puzzle', 4.00)">Add to Cart</button>
+</div>
+
+<div class="charm-card">
+    <img src="https://i.pinimg.com/736x/28/07/54/280754a16b12ab9fa25129421d9d2112.jpg" alt="Charm 12">
+    <p><b>Born to Shop</b></p>
+    <p>RM3.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+  <button class="cart-btn" onclick="addToCart('Bowling Pin', 3.50)">Add to Cart</button>
+</div>
+
+<div class="charm-card">
+    <img src="https://i.pinimg.com/736x/3f/77/7b/3f777bba54a8081a6a4be02314a1f2c4.jpg" alt="Charm 13">
+    <p><b>Music Notes</b></p>
+    <p>RM4.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+  <button class="cart-btn" onclick="addToCart('Music Notes', 4.50)">Add to Cart</button>
+</div>
+
+<div class="charm-card">
+    <img src="https://i.pinimg.com/736x/b3/63/4d/b3634d4b1dd3167e2c21f461ee31cb71.jpg" alt="Charm 14">
+    <p><b>Love</b></p>
+    <p>RM4.00</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+  <button class="cart-btn" onclick="addToCart('Love', 4.00)">Add to Cart</button>
+</div>
+
+<div class="charm-card">
+    <img src="https://i.pinimg.com/736x/5a/0d/bd/5a0dbd66873f8ff76feace366771f29d.jpg" alt="Charm 15">
+    <p><b>Butterfly</b></p>
+    <p>RM4.50</p>
+
+    <div class="quantity-selector">
+    <button class="qty-btn">-</button>
+    <span class="qty-number">1</span>
+    <button class="qty-btn">+</button>
+  </div>
+  <button class="cart-btn" onclick="addToCart('Butterfly', 4.50)">Add to Cart</button>
+</div>
+
+<script>
+  // Quantity buttons for all cards
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+
+    cards.forEach(function (card) {
+      const minusBtn = card.querySelectorAll('.qty-btn')[0];
+      const plusBtn = card.querySelectorAll('.qty-btn')[1];
+      const qtyDisplay = card.querySelector('.qty-number');
+
+      minusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        if (currentQty > 1) {
+          qtyDisplay.textContent = currentQty - 1;
+        }
+      });
+
+      plusBtn.addEventListener('click', function () {
+        let currentQty = parseInt(qtyDisplay.textContent);
+        qtyDisplay.textContent = currentQty + 1;
+      });
+    });
+  });
+
+  // Add to Cart with Quantity
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cards = document.querySelectorAll('.charm-card, .bracelet-card');
+    cards.forEach(card => {
+      if (card.innerText.includes(name)) {
+        const qty = parseInt(card.querySelector('.qty-number').textContent);
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity += qty;
+        } else {
+          cart.push({ name, price, quantity: qty });
+        }
+      }
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+  }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+
+
+<script>
+  function updateClock() {
+    const clock = document.getElementById('live-clock');
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-MY', {
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    clock.textContent = timeStr;
+  }
+
+  function showClockAlert() {
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-MY', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    const timeStr = now.toLocaleTimeString('en-MY');
+    alert(`🗓 Today is ${dateStr}\n⏰ Current Time: ${timeStr}`);
+  }
+  
+
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+
+</body>
+</html>

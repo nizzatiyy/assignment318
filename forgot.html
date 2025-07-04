@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgot Password - Charmora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box" id="reset-step-1">
+    <h2>Forgot Your Password?</h2>
+    <p>Enter your username to reset your password</p>
+    <form onsubmit="checkUser(event)">
+      <input type="text" id="reset-username" placeholder="Username" required><br>
+      <input type="submit" value="Next">
+    </form>
+  </div>
+  <div class="box" id="reset-step-2" style="display: none;">
+    <h2>Set New Password</h2>
+    <form onsubmit="updatePassword(event)">
+      <input type="password" id="new-password" placeholder="New Password" required><br>
+      <input type="submit" value="Update Password">
+    </form>
+  </div>
+  <script>
+    let currentUser = null;
+    function checkUser(event) {
+      event.preventDefault();
+      const username = document.getElementById("reset-username").value.trim();
+      const storedUser = JSON.parse(localStorage.getItem("matchaUser"));
+      if (storedUser && username === storedUser.username) {
+        currentUser = storedUser;
+        document.getElementById("reset-step-1").style.display = "none";
+        document.getElementById("reset-step-2").style.display = "block";
+      } else {
+        alert("Username not found.");
+      }
+    }
+    function updatePassword(event) {
+      event.preventDefault();
+      const newPassword = document.getElementById("new-password").value.trim();
+      if (newPassword.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+      }
+      currentUser.password = newPassword;
+      localStorage.setItem("matchaUser", JSON.stringify(currentUser));
+      alert("Password updated! Please login again.");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
